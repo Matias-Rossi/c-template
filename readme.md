@@ -4,15 +4,11 @@
 
 ## Quickstart
 
----
-
 1. Clone the repository
 2. Set required libraries and custom directories in the makefile
 3. Change programName in .vscode/launch.json
 
 ## Features
-
----
 
 - Makefile
 - Unit testing using [CSpec](https://github.com/mumuki/cspec)
@@ -27,8 +23,6 @@
 - `test`: runs CSpec tests
 
 ## Next steps
-
----
 
 - [ ] Implement Valgrind  
 - [ ] Improve makefile readabilty and add feature
