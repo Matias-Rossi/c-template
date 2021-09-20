@@ -4,7 +4,7 @@
  # 4. Change other directories (as required)
 
 PROGRAM=programName
-RELSUFFIX=releaseVersion
+RELSUFFIX=
 
 LIBS=
 
