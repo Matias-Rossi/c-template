@@ -1,7 +1,7 @@
 #include "example.h"
 
 int main(int argc, char **argv) {
-    printf("This file serves only as an example!\n");
+    printf("Example file is being executed!\n");
 
     return 0;
 }

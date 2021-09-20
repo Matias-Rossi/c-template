@@ -1,0 +1,23 @@
+{   
+   "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "msvc build",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "--directory=${workspaceFolder};",
+                "make", 
+                "--directory=${workspaceFolder}/subfolder"
+            ],
+            "group":  {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal":"always"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
