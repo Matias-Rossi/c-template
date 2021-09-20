@@ -7,6 +7,7 @@ PROGRAM=programName
 RELSUFFIX=
 
 LIBS=
+TESTLIBS=-lcspecs
 
 CC=gcc
 CFLAGS=-Iinclude -g -Wall
@@ -20,6 +21,10 @@ SRCS=$(wildcard $(SRC)/*.c)
 BINDIR=bin
 BIN=$(BINDIR)/$(PROGRAM)
 
+TESTDIR=tests
+TESTS=$(wildcard $(TESTDIR)/*.c)
+TESTBINS=$(patsubst $(TESTDIR)/%.c,$(TESTDIR)/bin/% , $(TESTS))
+
 all:$(BIN)
 
 release: CFLAGS=-Iinclude -Wall -O2 -DNDEBUG
@@ -32,9 +37,19 @@ $(BIN): $(OBJS)
 $(OBJ)/%.o: $(SRC)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(LIBS)
 
+$(TEST)/bin/%: $(TEST)/%.c
+	$(CC) $(CFLAGS) $< $(OBJS) -o $@ $(LIBS) $(TESTLIBS)
+
+$(TESTDIR)/bin:
+	mkdir $@
+
+.PHONY: test
+test: $(TESTDIR)/bin $(TESTBINS)
+	for test in $(TESTBINS) ; do ./$$test ; done
+
 .PHONY: clean
 clean:
-	$(RM) -r $(BINDIR)/* $(OBJ)/*
+	$(RM) -r $(BINDIR)/* $(OBJ)/* $(TESTDIR)/bin/*
 
 .PHONY: submit
 submit:
