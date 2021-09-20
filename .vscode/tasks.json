@@ -7,8 +7,6 @@
             "command": "make",
             "args": [
                 "--directory=${workspaceFolder};",
-                "make", 
-                "--directory=${workspaceFolder}/subfolder"
             ],
             "group":  {
                 "kind": "build",

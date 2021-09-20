@@ -5,7 +5,7 @@
             "name": "Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/programName", //Change program name as needed
+            "program": "${workspaceFolder}/bin/programName", //TODO: Change program name as needed
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
