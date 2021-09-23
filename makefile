@@ -37,14 +37,14 @@ $(BIN): $(OBJS)
 $(OBJ)/%.o: $(SRC)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(LIBS)
 
-$(TEST)/bin/%: $(TEST)/%.c
+$(TESTDIR)/bin/%: $(TESTDIR)/%.c $(BIN)
 	$(CC) $(CFLAGS) $< $(OBJS) -o $@ $(LIBS) $(TESTLIBS)
 
 $(TESTDIR)/bin:
 	mkdir $@
 
 .PHONY: test
-test: $(TESTDIR)/bin $(TESTBINS)
+test: $(TESTDIR)/bin/ $(TESTBINS)
 	for test in $(TESTBINS) ; do ./$$test ; done
 
 .PHONY: clean
