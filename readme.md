@@ -24,5 +24,4 @@
 
 ## Next steps
 
-- [ ] Implement Valgrind  
-- [ ] Improve makefile readabilty and add feature
+- [ ] Improve makefile, both readibilty and add features
