@@ -21,7 +21,3 @@
 - `clean`: cleans all binaries
 - `submit`: creates a zip with the currently existing binary
 - `test`: runs CSpec tests
-
-## Next steps
-
-- [ ] Improve makefile, both readibilty and add features
